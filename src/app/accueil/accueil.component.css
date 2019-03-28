@@ -1,0 +1,65 @@
+header {
+    background: #74d66b;
+    padding: 3em;
+}
+
+
+
+header nav {
+    justify-self: right;
+}
+
+header nav ul {
+    list-style-type: none;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+header nav li {
+    float: left;
+    
+    
+}
+
+header nav li a {
+    padding: 1.5em;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    text-decoration:none;
+    font-size: 2em;
+}
+
+header nav li a:hover {
+    background: #ffffff;
+ 
+}
+
+
+#sContent{
+    display: table;
+    width:2700px;
+    -webkit-animation: slideAnim 10s ease 0s infinite;
+       -moz-animation: slideAnim 10s ease 0s infinite;
+        -ms-animation: slideAnim 10s ease 0s infinite;
+         -o-animation: slideAnim 10s ease 0s infinite;
+            animation: slideAnim 10s ease 0s infinite;
+}
+
+     ul li{
+    display: table-cell;
+    width:350px;
+}
+
+@keyframes slideAnim{
+from,11%,to {margin-left:-0px;}
+15%,26%{margin-left:-600px;}
+30%,41%{margin-left:-900px;}
+45%,56%{margin-left:-1200px;}
+65%,76%{margin-left:-1500px;}
+80%,91%{margin-left:-1800px;}
+99.99%{margin-left:-2100px;}
+}
+
