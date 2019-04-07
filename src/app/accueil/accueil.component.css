@@ -23,7 +23,7 @@ header nav li {
 }
 
 header nav li a {
-    padding: 1.5em;
+    padding: 5.5em;
     text-transform: capitalize;
     text-align: center;
     font-weight: bold;
@@ -37,6 +37,16 @@ header nav li a:hover {
  
 }
 
+
+body h1{color: #000000}
+body p{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 50px;
+    color: black}
+
+body span{color: rgb(39, 138, 64)}
 
 #sContent{
     display: table;
@@ -55,11 +65,11 @@ header nav li a:hover {
 
 @keyframes slideAnim{
 from,11%,to {margin-left:-0px;}
-15%,26%{margin-left:-600px;}
-30%,41%{margin-left:-900px;}
-45%,56%{margin-left:-1200px;}
-65%,76%{margin-left:-1500px;}
-80%,91%{margin-left:-1800px;}
-99.99%{margin-left:-2100px;}
+15%,26%{margin-left:-100px;}
+30%,41%{margin-left:-300px;}
+45%,56%{margin-left:-600px;}
+65%,76%{margin-left:-900px;}
+80%,91%{margin-left:-1200px;}
+99.99%{margin-left:-1500px;}
 }
 

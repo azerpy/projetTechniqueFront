@@ -12,10 +12,13 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { EvenementComponent } from './evenement/evenement.component';
 import { ProfilComponent } from './profil/profil.component';
 import { ContactComponent } from './contact/contact.component';
+
 const components = [
-  AppComponent, SigninComponent,SignupComponent,NavComponent,
-  AccueilComponent,ExercicesComponent,EvenementComponent,
-  ProfilComponent,ContactComponent];
+  AppComponent, SigninComponent,SignupComponent,
+  NavComponent, AccueilComponent,ExercicesComponent, EvenementComponent,
+  ProfilComponent, ContactComponent];
+
+
 const appRoutes: Routes = [
   { path: 'signin', component: SigninComponent },
   { path: 'signup',      component: SignupComponent }, 
@@ -26,6 +29,7 @@ const appRoutes: Routes = [
   { path: 'evenement',      component: EvenementComponent }, 
   { path: 'profil',      component: ProfilComponent },  
   { path: 'contact',      component: ContactComponent },  
+  
 ];
 
 
@@ -35,11 +39,11 @@ const appRoutes: Routes = [
     SignupComponent,
     SigninComponent,
     NavComponent,
-    ExercicesComponent,
     AccueilComponent,
+    ExercicesComponent,
     EvenementComponent,
     ProfilComponent,
-    ContactComponent,
+    ContactComponent
       
   ],
   imports: [
