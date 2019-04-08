@@ -3,21 +3,17 @@
   <h1>Inscrivez-vous</h1>
   <div class="main-agileinfo">
     <div class="agileits-top">
-      <form [formGroup]="UserForm" (ngSubmit)="onFormSubmit(UserForm.value)">  
-        <input class="form-control" name="Nom " placeholder="Nom"  formControlName="Nom" required=""><br>
-        <input class="form-control" type="text" name="Prenom " formControlName="Prenom" placeholder="Prenom" required=""> <br>
-        <input class="form-control" type="text" name="Age " formControlName="Age" placeholder="Age" required=""><br>
-        <input class="form-control" type="text" name="Poids " formControlName="Poids" placeholder="Poids" required=""><br>
-        <input class="form-control" type="text" name="Taille " formControlName="Taille" placeholder="Taille" required="">
-        <input class="form-control" type="password" name="mot_de_passe" formControlName="Mdp" placeholder="Mot de passe" required="">
-        <input class="form-control" type="password" name="Cmdp" placeholder="Confirmez Mot de passe" required="">
+      <form name="form" (ngSubmit)="CreateUser()" #f="ngForm">
+        <input class="text email" type="text" name="Nom" [(ngModel)]="model.id" class="form-control sty1" placeholder="Adresse mail" required="">
+        <input class="text email" type="text" name="Nom" [(ngModel)]="model.prenom" class="form-control sty1" placeholder="Prenom" required="">
+        <input class="text email" type="text" name="Nom" [(ngModel)]="model.nom" class="form-control sty1" placeholder="Nom" required="">
+        <input class="text email" type="text" name="Nom" [(ngModel)]="model.age" class="form-control sty1" placeholder="Age" required="">
+        <input class="text email" type="text" name="Nom" [(ngModel)]="model.poids" class="form-control sty1" placeholder="Poids" required="">
+        <input class="text email" type="text" name="Nom" [(ngModel)]="model.taille" class="form-control sty1" placeholder="Taille" required="">
+        <input class="text" type="password" name="Password" [(ngModel)]="model.mdp" class="form-control" placeholder="Mot de passe" required=""> 
         <div>
-          <input type="radio" id="Coach"
-           name="Coach" value="Coach">
-          <label for="Coach">Coach</label>
-          <input type="radio" id="Client"
-           name="Client" value="Client">
-          <label for="Client">Client</label>
+          <input type="radio" id="Coach" [(ngModel)]="model.isCoach" name="Coach" value="Coach">
+          <label for="Coach">Coach</label>  
         </div>
         <input type="submit" value="Valider">
       </form>

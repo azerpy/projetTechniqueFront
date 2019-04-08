@@ -1,8 +1,7 @@
 import { SignupService } from './../signup.service';
-import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';    
-import { NgForm, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';    
+import { Component, OnInit } from '@angular/core'; 
 import { Signup } from '../signup';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -11,32 +10,26 @@ import { Signup } from '../signup';
 export class SignupComponent implements OnInit {
   data = false;    
   UserForm: any;    
-  massage:string;    
-  constructor(private formbulider: FormBuilder,private loginService:SignupService) { }    
+  massage:string;  
+  model : any={};    
+      
+  constructor(private router:Router,private loginService:SignupService) { }    
     
   ngOnInit() {    
-    this.UserForm = this.formbulider.group({    
-      Prenom: ['', [Validators.required]],    
-      Nom: ['', [Validators.required]],    
-      Mdp: ['', [Validators.required]],    
-      Age: ['', [Validators.required]],    
-      Poids: ['', [Validators.required]],    
-      Taille: ['', [Validators.required]],    
-    });    
+   
   }    
-   onFormSubmit()    
+  
+  CreateUser()    
   {    
-    const user = this.UserForm.value;    
-    this.CreateUser(user);    
-  }    
-  CreateUser(signup:Signup)    
-  {    
-  this.loginService.CreateUser(signup).subscribe(    
-    ()=>    
+  this.loginService.CreateUser(this.model).subscribe(    
+    data=>    
     {    
-      this.data = true;    
+      if(data)    
+        {  
+          //debugger;     
+          this.router.navigate(['/']);    
+        }    
       this.massage = 'Data saved Successfully';    
-      this.UserForm.reset();    
     });    
   }    
 

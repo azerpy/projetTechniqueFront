@@ -4,8 +4,8 @@
     <div class="main-agileinfo">
       <div class="agileits-top">
         <form name="form" (ngSubmit)="login()" #f="ngForm">
-          <input class="text email" type="text" name="Nom" [(ngModel)]="model.Nom" class="form-control sty1" placeholder="Nom" required="">
-          <input class="text" type="password" name="Password" [(ngModel)]="model.Password" class="form-control" placeholder="Mot de passe" required="">
+          <input class="text email" type="text" name="Nom" [(ngModel)]="model.id" class="form-control sty1" placeholder="Nom" required="">
+          <input class="text" type="password" name="Password" [(ngModel)]="model.mdp" class="form-control" placeholder="Mot de passe" required="">
     
           <input type="submit" value="Connecter">
           <a [routerLink]="['/signup']"> <p> Vous etes nouveau? Créer votre compte </p></a>

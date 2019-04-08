@@ -19,13 +19,12 @@ export class SignupService {
     this.header = new HttpHeaders(headerSettings);  
   }  
   Login(model : any){  
-    debugger;  
-     var a =this.Url+'UserLogin';  
-     return this.http.post<any>(this.Url+'UserLogin',model,{ headers: this.header});  
+     var a =this.Url+'/Login';  
+     return this.http.post<any>(a,model,{ headers: this.header});  
   }  
    CreateUser(signup:Signup)  
    {  
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };  
-    return this.http.post<Signup[]>(this.Url + '/Register/', signup, httpOptions)  
+    return this.http.post<Signup[]>(this.Url + '/Register/', signup, httpOptions)
    }  
 }  

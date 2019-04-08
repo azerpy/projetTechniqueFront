@@ -21,16 +21,17 @@ export class SigninComponent {
     sessionStorage.clear();    
   }    
   login(){    
-    debugger;    
+    //debugger;    
     this.signupService.Login(this.model).subscribe(    
       data => {    
-        debugger;    
-        if(data.Status=="Success")    
-        {       
+        //debugger;    
+        if(data)    
+        {  
+          //debugger;     
           this.router.navigate(['/accueil']);    
-          debugger;    
         }    
-        else{    
+        else{  
+          //debugger;  
           this.errorMessage = data.Message;    
         }    
       },    
