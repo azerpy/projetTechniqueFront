@@ -37,6 +37,4 @@ export class ExercicesComponent implements OnInit {
       { //redirect a une page qui affiche l'exercice créé 
        });
   }
-
-
 }
