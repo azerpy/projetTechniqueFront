@@ -23,7 +23,7 @@ header nav li {
 }
 
 header nav li a {
-    padding: 1.5em;
+    padding: 5.5em;
     text-transform: capitalize;
     text-align: center;
     font-weight: bold;
@@ -38,7 +38,10 @@ header nav li a:hover {
 }
 
 
- 
+body span{color: rgb(39, 138, 64)}
 
- 
- 
+     ul li{
+    display: table-cell;
+    width:350px;
+}
+

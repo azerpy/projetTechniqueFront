@@ -2,6 +2,7 @@ import { SignupService } from './../signup.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';    
 import { FormsModule } from '@angular/forms';  
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-signin',
@@ -13,12 +14,13 @@ export class SigninComponent {
   model : any={};    
     
   errorMessage:string;    
-  constructor(private router:Router,private signupService:SignupService) { }    
+  constructor(private router:Router,private signupService:SignupService, private cookie:CookieService) { }    
     
     
   ngOnInit() {    
-    sessionStorage.removeItem('Nom');    
-    sessionStorage.clear();    
+    if(this.cookie.get("profil")){
+      this.router.navigate(['/accueil']); 
+    }
   }    
   login(){    
     //debugger;    
@@ -28,6 +30,7 @@ export class SigninComponent {
         if(data)    
         {  
           //debugger;     
+          this.cookie.set("profil",data.id);
           this.router.navigate(['/accueil']);    
         }    
         else{  

@@ -12,10 +12,11 @@
         <input class="text email" type="text" name="Nom" [(ngModel)]="model.taille" class="form-control sty1" placeholder="Taille" required="">
         <input class="text" type="password" name="Password" [(ngModel)]="model.mdp" class="form-control" placeholder="Mot de passe" required=""> 
         <div>
-          <input type="radio" id="Coach" [(ngModel)]="model.isCoach" name="Coach" value="Coach">
+          <input type="checkbox" id="Coach" [(ngModel)]="model.isCoach" name="Coach" value="Coach">
           <label for="Coach">Coach</label>  
         </div>
         <input type="submit" value="Valider">
+        <a [routerLink]="['/signin']"> <p> Vous avez déjà un compte? Connectez-vous </p></a>
       </form>
     </div>
   </div>

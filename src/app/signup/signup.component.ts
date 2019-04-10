@@ -2,6 +2,7 @@ import { SignupService } from './../signup.service';
 import { Component, OnInit } from '@angular/core'; 
 import { Signup } from '../signup';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -13,10 +14,12 @@ export class SignupComponent implements OnInit {
   massage:string;  
   model : any={};    
       
-  constructor(private router:Router,private loginService:SignupService) { }    
+  constructor(private router:Router,private loginService:SignupService, private cookie:CookieService) { }    
     
-  ngOnInit() {    
-   
+  ngOnInit() { 
+    if(this.cookie.get("profil")){
+      this.router.navigate(['/accueil']); 
+    }   
   }    
   
   CreateUser()    

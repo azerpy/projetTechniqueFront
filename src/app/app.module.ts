@@ -15,6 +15,7 @@ import { ContactComponent } from './contact/contact.component';
 import {HttpClientModule} from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 const components = [
   AppComponent, SigninComponent,SignupComponent,
@@ -62,7 +63,7 @@ const appRoutes: Routes = [
     ],
   entryComponents: components,
 
-  providers: [HttpClientModule],
+  providers: [HttpClientModule,CookieService],
 })
 export class AppModule { 
   constructor(private resolver: ComponentFactoryResolver) { }

@@ -6,9 +6,10 @@
             <ul>
                 <li><a routerLink="/accueil">Accueil</a></li>
                 <li><a routerLink="/exercices">Exercices</a></li>
-                <li><a routerLink="/evenement">Evènements</a></li>
+                <!--<li><a routerLink="/evenement">Evènements</a></li>-->
                 <li><a routerLink="/profil"> Profil</a></li>
-                <li><a routerLink="/contact"> Contact</a></li>
+                <!--<li><a routerLink="/contact"> Contact</a></li>-->
+                <li><a (click)="deconnexion()"> Deconnexion</a></li>
   
             </ul>
         </nav>
@@ -19,30 +20,33 @@
       
         <div class="contact-form">
         <h2>Créer un Exercice</h2>
-        <form>
+        <form name="form" (ngSubmit)="createExercice()" #f="ngForm">
             <p>Nom</p>
-            <input type="text" name="Titre"   placeholder="" required>
+            <input [(ngModel)]="model.titre" type="text" name="Titre"   placeholder="" required>
            <br>
             <p>
                 Type:
             </p><br>
                 <span class="custom-dropdown custom-dropdown--white">
-                    <select class="custom-dropdown__select custom-dropdown__select--white">
+                    <select [(ngModel)]="model.type" name="type" class="custom-dropdown__select custom-dropdown__select--white">
                         <option>Cardio</option>
                         <option>Danse</option>
                         <option>Aerobic</option>
                         <option>Musculation</option>
-                        </select>
+                    </select>
                 </span> <br><br><br>
          
-                <p> Télécharger une image </p><br>
-             <input type="file" name="fileToUpload" id="fileToUpload"><br>
-            <textarea name="desc" rows="10" cols="50">Description</textarea><br><br><br>
+                <p> Lien de l'image</p><br>
+             <input type="text" [(ngModel)]="model.image" name="urlImage" id="fileToUpload"><br>
+            <textarea name="description" rows="10" cols="50" placeholder="Description" [(ngModel)]="model.description"></textarea><br><br><br>
             
             <input  type="submit" name="" value="Créer">
       
         </form>
       </div>
+      <li *ngFor="let exercice of listExercices">
+          {{exercice.title}}
+      </li>
       
       </body>
       
