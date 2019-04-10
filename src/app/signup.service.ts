@@ -27,4 +27,9 @@ export class SignupService {
     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };  
     return this.http.post<Signup[]>(this.Url + '/Register/', signup, httpOptions)
    }  
+
+   getInfo(model:any){
+     var a=this.Url+'/getInfo';
+     return this.http.post<any>(a,model,{headers:this.header});
+   }
 }  
