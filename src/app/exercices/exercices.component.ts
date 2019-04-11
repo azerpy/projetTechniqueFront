@@ -21,7 +21,7 @@ export class ExercicesComponent implements OnInit {
 
     this.listExercices = this.exerciceService.getExercices().subscribe(
       data => {
-      this.listExercices = Array.of(this.listExercices); 
+      this.listExercices = data;
       }
     );
   }
@@ -35,6 +35,7 @@ export class ExercicesComponent implements OnInit {
     this.exerciceService.createExercice(this.model).subscribe(    
       data=>    
       { //redirect a une page qui affiche l'exercice créé 
-       });
+        this.router.navigate(['/exercices']);   
+      });
   }
 }

@@ -44,9 +44,12 @@
       
         </form>
       </div>
-      <li *ngFor="let exercice of listExercices">
-          {{exercice.title}}
-      </li>
+      <tr *ngFor="let exercice of listExercices">
+          <div><h1>{{exercice.titre}}</h1></div> 
+          <div>Type : {{exercice.type}}</div>
+          <div>Description : {{exercice.description}}</div>
+          <img src="{{exercice.image}}" style>
+      </tr>
       
       </body>
       
