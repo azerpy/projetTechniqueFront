@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { EvenementService } from '../evenement.service';
 
 @Component({
   selector: 'app-evenement',
@@ -9,7 +10,9 @@ import { Router } from '@angular/router';
 })
 export class EvenementComponent implements OnInit {
 
-  constructor(private cookie:CookieService, private router:Router) { }
+  model : any={};  
+
+  constructor(private cookie:CookieService, private router:Router, private evenementService:EvenementService) { }
 
   ngOnInit() {
     if(!this.cookie.get("profil")){
@@ -17,4 +20,17 @@ export class EvenementComponent implements OnInit {
     }
   }
 
+  deconnexion(){
+    this.cookie.delete("profil");
+    this.router.navigate(["/signin"]);
+  }
+
+  createEvenement(){
+    this.evenementService.createEvenement(this.model).subscribe(    
+      data=>    
+      { //redirect a une page qui affiche l'exercice créé 
+        this.router.navigate(['/accueil']);   
+      });
+  }
+  
 }

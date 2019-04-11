@@ -6,9 +6,10 @@
             <ul>
                 <li><a routerLink="/accueil">Accueil</a></li>
                 <li><a routerLink="/exercices">Exercices</a></li>
-                <li><a routerLink="/evenement">Evènements</a></li>
+                <li><a routerLink="/evenement">Evenements</a></li>
                 <li><a routerLink="/profil"> Profil</a></li>
-                <li><a routerLink="/contact"> Contact</a></li>
+                <!--<li><a routerLink="/contact"> Contact</a></li>-->
+                <li><a (click)="deconnexion()"> Deconnexion</a></li>
   
             </ul>
         </nav>
@@ -18,14 +19,14 @@
       <body>
         <img src="assets/images/ev.jpg" width="2000" height="890">
       
-        <div class="contact-form">
+        <div class="contact-form" >
         <h2>Créer votre èvenement</h2><br><br>
-        <form>
+        <form name="form" (ngSubmit)="createEvenement()" #f="ngForm">
             <p>Titre</p>
-            <input type="text" name="Titre"   placeholder="" required>
+            <input  [(ngModel)]="model.titre" type="text" name="Titre"   placeholder="" required>
             <p>Date</p>
-            <input type="date" name="date"  placeholder="date" required=""><br><br>
-            <textarea name="desc" rows="10" cols="50">Description</textarea><br><br><br>
+            <input  [(ngModel)]="model.date" type="date" name="date"  placeholder="date" required=""><br><br>
+            <textarea  [(ngModel)]="model.description" name="description" rows="10" cols="50">Description</textarea><br><br><br>
             
             <input  type="submit" name="" value="Créer">
       
